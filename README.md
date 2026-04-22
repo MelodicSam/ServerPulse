@@ -1,4 +1,4 @@
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=260&section=header&text=ServerPulse&fontSize=65&fontAlignY=38&desc=Nginx20%Healing20%Server%20%7C%20%20%7C%20%20&descAlignY=62&animation=fadeIn&color=0:020617,25:0f172a,55:0ea5e9,100:22d3ee"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=260&section=header&text=ServerPulse&fontSize=65&fontAlignY=38&desc=Nginx%Healing%Server%20%7C%20%20%7C%20%20&descAlignY=62&animation=fadeIn&color=0:020617,25:0f172a,55:0ea5e9,100:22d3ee"/>
 
 **ServerPulse** is a self-healing server dashboard for Linux services. It monitors a service such as **Nginx**, shows its live status in a web dashboard, attempts recovery when the service fails, records incidents, and can send Discord or Teams notifications.
 
