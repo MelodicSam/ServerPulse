@@ -1,0 +1,15 @@
+services:
+  serverpulse:
+    build: .
+    container_name: serverpulse
+    ports:
+      - "5000:5000"
+    environment:
+      SERVICE_NAME: nginx
+      SERVER_NAME: swayam-vm
+      ALLOW_REAL_CONTROL: "false"
+      DISCORD_WEBHOOK_URL: ""
+      TEAMS_WEBHOOK_URL: ""
+    volumes:
+      - ./app/data:/app/app/data
+    restart: unless-stopped

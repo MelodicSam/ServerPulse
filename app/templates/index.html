@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ServerPulse Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>ServerPulse</h1>
+        <p class="subtitle">Self-Healing Server Dashboard</p>
+      </div>
+      <div class="meta">
+        <span><strong>Host:</strong> {{ hostname }}</span>
+        <span><strong>Service:</strong> {{ service_name }}</span>
+      </div>
+    </header>
+
+    <section class="hero-grid">
+      <div class="card status-card">
+        <h2>Service Status</h2>
+        <div id="statusBadge" class="badge unknown">Loading...</div>
+        <p id="statusText">Checking current state...</p>
+      </div>
+      <div class="card">
+        <h2>Quick Actions</h2>
+        <div class="button-row">
+          <button onclick="runCheck()">Check Now</button>
+          <button onclick="manualRestart()">Restart Now</button>
+          <button onclick="loadAll()">Refresh</button>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Stats</h2>
+        <ul class="stats-list">
+          <li>Total incidents: <span id="totalIncidents">0</span></li>
+          <li>Successful recoveries: <span id="successfulRecoveries">0</span></li>
+          <li>Failed recoveries: <span id="failedRecoveries">0</span></li>
+          <li>Latest incident: <span id="latestIncident">None</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="grid-two">
+      <div class="card">
+        <h2>Incident History</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Service</th>
+                <th>Problem</th>
+                <th>Action</th>
+                <th>Result</th>
+              </tr>
+            </thead>
+            <tbody id="incidentTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Recent Logs</h2>
+        <pre id="logViewer">Loading logs...</pre>
+      </div>
+    </section>
+
+    <footer>
+      <span id="lastUpdated">Last updated: never</span>
+    </footer>
+  </div>
+
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
